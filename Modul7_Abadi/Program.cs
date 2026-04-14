@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 public class WatchList
@@ -6,7 +6,7 @@ public class WatchList
     [JsonPropertyName("title")]
     public string Title { get; set; }
 
-    [JsonPropertyName("diretor")]
+    [JsonPropertyName("director")]
     public string Director { get; set; }
 
     [JsonPropertyName("year")]
@@ -47,5 +47,9 @@ public class Program
         Console.WriteLine("Movies:");
 
         Film.ReadJSON("jurnal7_1_103022300164.json");
+        Film.ReadJSON("jurnal7_1_103022430005.json");
+        Film.ReadJSON("jurnal7_1_103022400072.json");
+        Film.ReadJSON("Jurnal7_1_103022400060.json");
+        Film.ReadJSON("jurnal7_1_103022400026.json");
     }
 }
