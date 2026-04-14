@@ -1,14 +1,7 @@
-
+﻿using System.Text.Json.Serialization;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 public class WatchList
-
-
-using System.Text.Json.Serialization;
-using System.Text.Json;
-
-public class WatchList 
 {
     [JsonPropertyName("title")]
     public string Title { get; set; }
@@ -23,8 +16,6 @@ public class WatchList
     public string Genre { get; set; }
 
     [JsonPropertyName("rating")]
-
-    public int Rating { get; set; }
     public double Rating { get; set; }
 
     [JsonPropertyName("durationMinutes")]
@@ -36,62 +27,27 @@ public class WatchList
 
 public class Film
 {
-    public static void ReadJson(string filename)
+    public static void ReadJSON(string filename)
     {
         var fileString = File.ReadAllText(filename);
-        var film = JsonSerializer.Deserialize<WatchList>(fileString);  
-        if(film != null)
-        {
-            Console.WriteLine($"{film.Title}({film.Year} - {film.Rating})");
         var film = JsonSerializer.Deserialize<WatchList>(fileString);
         if (film != null)
         {
             Console.WriteLine($"{film.Title} ({film.Year} - {film.Rating})");
-            
         }
     }
 }
 
-public class Program
-{
-
-    public static void Main(string[] args)
-    {
-        Console.WriteLine("Watchlist Name: Weekend Marathon");
-        Console.WriteLine("Created By: Kelompok Abadi");
-        Console.WriteLine("Movies");
-
-        Film.ReadJson("Jurnal7_1_103022400060.json");
-    }
-}
-    public static void Main (string[] args)
-    {
-        Console.WriteLine("WatchList Name: Pantai");
-        Console.WriteLine("Created By Kelompok Abadi");
-        Console.WriteLine("Movies:");
-
-        Film.ReadJson("jurnal_1_103022400026.json");
-    }
-}
-    { 
-        var fileString = File.ReadAllText(filename);
-        var film = JsonSerializer.Deserialize<WatchList>(fileString);
-        if (film != null)
-        { 
-            Console.WriteLine($" {film.Title} ({film.Year} - {film.Rating})");
-
-        }
-
-    }
-}
 public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("WatchList Name: Notebook");
-        Console.WriteLine("Created By Kelompok Abadi");
+        Console.WriteLine("Watchlist Name: Weekend Marathon");
+        Console.WriteLine("Created By: kelompok abadi");
         Console.WriteLine("Movies:");
 
-        Film.ReadJson("jurnal7_1_103022430005.json");
+        Film.ReadJSON("jurnal7_1_103022400072.json");
+        Film.ReadJSON("Jurnal7_1_103022400060.json");
+        Film.ReadJSON("jurnal7_1_103022400026.json");
     }
 }
