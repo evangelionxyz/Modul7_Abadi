@@ -1,5 +1,7 @@
-﻿using System.Text.Json;
+
+﻿// See https://aka.ms/new-console-template for more information
 using System.Text.Json.Serialization;
+using System.Text.Json;
 
 public class WatchList 
 {
@@ -28,6 +30,28 @@ public class WatchList
 public class Film
 {
     public static void ReadJson(string filename)
+    {
+        var fileString = File.ReadAllText(filename);
+        var film = JsonSerializer.Deserialize<WatchList>(fileString);
+        if (film != null)
+        {
+            Console.WriteLine($"{film.Title} ({film.Year} - {film.Rating})");
+            
+        }
+    }
+}
+
+public class Program
+{
+    public static void Main (string[] args)
+    {
+        Console.WriteLine("WatchList Name: Pantai");
+        Console.WriteLine("Created By Kelompok Abadi");
+        Console.WriteLine("Movies:");
+
+        Film.ReadJson("jurnal_1_103022400026.json");
+    }
+}
     { 
         var fileString = File.ReadAllText(filename);
         var film = JsonSerializer.Deserialize<WatchList>(fileString);
