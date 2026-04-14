@@ -1,5 +1,5 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using System.Text.Json;
 
 public class WatchList
 {
@@ -47,6 +47,7 @@ public class Program
         Console.WriteLine("Movies:");
 
         Film.ReadJSON("jurnal7_1_103022400072.json");
+        Film.ReadJSON("Jurnal7_1_103022400060.json");
+        Film.ReadJSON("jurnal7_1_103022400026.json");
     }
-
 }
