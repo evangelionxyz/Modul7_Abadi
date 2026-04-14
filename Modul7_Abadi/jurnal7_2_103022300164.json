@@ -1,0 +1,27 @@
+{
+    "watchlistName": "Watchlist Evan",
+    "createdBy": "Kelompok Evan",
+    "movies": [
+        {
+            "id": "F101",
+            "title": "The Evangelion",
+            "year": 1999,
+            "genre": "Action",
+            "rating": 8.7
+        },
+        {
+            "id": "F102",
+            "title": "Test 1",
+            "year": 2019,
+            "genre": "Thriller",
+            "rating": 8.5
+        },
+        {
+            "id": "F103",
+            "title": "Test",
+            "year": 2019,
+            "genre": "Superhero",
+            "rating": 8.4
+        }
+    ]
+}
