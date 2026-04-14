@@ -38,6 +38,39 @@ public class Film
     }
 }
 
+public class ListName
+{
+    [JsonPropertyName("watchlistName")]
+    public string WatchListName { get; set; }
+    [JsonPropertyName("createdBy")]
+    public string CreatedBy { get; set; }
+    [JsonPropertyName("movies")]
+    public List<WatchList> Movies { get; set; }
+}
+
+public class WatchListFilm
+{
+    public static void ReadJSON(string filename)
+    {
+        var fileString = File.ReadAllText(filename);
+        var listName = JsonSerializer.Deserialize<ListName>(fileString);
+        if (listName != null)
+        {
+            Console.WriteLine($"Watchlist: {listName.WatchListName}");
+            Console.WriteLine($"Created By: {listName.CreatedBy}");
+
+            listName.Movies = JsonSerializer.Deserialize<List<WatchList>>(fileString);
+            if (listName.Movies != null)
+            {
+                foreach (var item in listName.Movies)
+                {
+                    Console.WriteLine($" {item.Title} ({item.Year} - {item.Rating})");
+                }
+            }
+        }
+    }
+}
+
 public class Program
 {
     public static void Main(string[] args)
@@ -49,5 +82,7 @@ public class Program
         Film.ReadJSON("jurnal7_1_103022400072.json");
         Film.ReadJSON("Jurnal7_1_103022400060.json");
         Film.ReadJSON("jurnal7_1_103022400026.json");
+
+        WatchListFilm.ReadJSON("jurnal7_2_1030224000072");
     }
 }

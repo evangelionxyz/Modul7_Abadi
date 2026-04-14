@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Modul7_Abadi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32b5ae44274b459f91d4bc23e149394491a03a69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c5d3a1c3d1fa8363188b1f923fefd5058c7e8de")]
 [assembly: System.Reflection.AssemblyProductAttribute("Modul7_Abadi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Modul7_Abadi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
